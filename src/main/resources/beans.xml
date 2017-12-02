@@ -7,5 +7,6 @@
 	<bean id="person" class="com.spring.io.Person">
 		<constructor-arg value="777" name="id"></constructor-arg>
 		<constructor-arg value="Mary" name="name"></constructor-arg>
+		<property name="textId" value="123"></property>
 	</bean>
 </beans>

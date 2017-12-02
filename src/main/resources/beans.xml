@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-
-	<bean id="person" class="com.spring.io.Person" factory-method="getInstance">
-		<constructor-arg value="777" name="id"></constructor-arg>
-		<constructor-arg value="Mary" name="name"></constructor-arg>
-		<property name="textId" value="123"></property>
-		<property name="address" ref="address"></property>
+	<bean id="person" class="com.spring.io.Person">
+	<!-- <property name="id" value="111"></property>
+	<property name="name" value="ashish"></property> -->
 	</bean>
 	<bean id="address" class="com.spring.io.Address">
 		<constructor-arg name="street" value="hinjewadi"></constructor-arg>
 		<constructor-arg name="postcode" value="411057"></constructor-arg>
 	</bean>
+	<context:annotation-config></context:annotation-config>
+
 </beans>

@@ -1,50 +1,34 @@
 package com.spring.io;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
 public class Person {
 	private int id;
 	private String name;
-	private int textId;
+	@Autowired
 	private Address address;
 
-	// setter name is important.Bean should use the same convention.
-	public void setTextId(int textId) {
-		this.textId = textId;
-	}
-
-	public Person(int id, String name) {
-		super();
+	@Autowired
+	public void setId(@Value("222") int id) {
 		this.id = id;
-		this.name = name;
 	}
-
-	public void setAddress(Address address) {
-		this.address = address;
+	@Autowired
+	public void setName(@Value("Ashish") String name) {
+		this.name = name;
 	}
 
 	public Person() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", textId=" + textId + ", address=" + address + "]";
+		return "Person [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
 
 	public void speak() {
 		System.out.println("Hello!, I am a person");
 	}
 
-//	public void onCreate() {
-//		System.out.println("Person Object is created");
-//	}
-//
-//	public void onDestroy() {
-//		System.out.println("Person Object is destroyed");
-//	}
-
-	public static Person getInstance(int id, String name) {
-		System.out.println("Creating Person Object using Factory Method");
-		return new Person(id, name);
-	}
 }

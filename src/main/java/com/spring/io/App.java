@@ -12,6 +12,10 @@ public class App {
 		Person person = context.getBean("person", Person.class);
 		person.speak();
 		System.out.println(person);
+		// Application context loads(create) beans define in xml or programatic at
+		// startup
+		Address address = context.getBean("address", Address.class);
+		System.out.println(address);
 		((ClassPathXmlApplicationContext) context).close();// to make sure context got destroyed. ApplicationContext
 															// doesn't have close method, so we did casting
 	}

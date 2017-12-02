@@ -8,5 +8,10 @@
 		<constructor-arg value="777" name="id"></constructor-arg>
 		<constructor-arg value="Mary" name="name"></constructor-arg>
 		<property name="textId" value="123"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	<bean id="address" class="com.spring.io.Address">
+		<constructor-arg name="street" value="hinjewadi"></constructor-arg>
+		<constructor-arg name="postcode" value="411057"></constructor-arg>
 	</bean>
 </beans>

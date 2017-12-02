@@ -4,12 +4,9 @@ public class Person {
 	private int id;
 	private String name;
 	private int textId;
+	private Address address;
 
-	public int getTextId() {
-		return textId;
-	}
-
-	//setter name is important.Bean should use the same convention.
+	// setter name is important.Bean should use the same convention.
 	public void setTextId(int textId) {
 		this.textId = textId;
 	}
@@ -20,16 +17,18 @@ public class Person {
 		this.name = name;
 	}
 
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	public Person() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", textId=" + textId + "]";
+		return "Person [id=" + id + ", name=" + name + ", textId=" + textId + ", address=" + address + "]";
 	}
 
 	public void speak() {

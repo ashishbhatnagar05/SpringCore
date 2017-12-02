@@ -11,6 +11,7 @@ public class App {
 				new ClassPathXmlApplicationContext("beans.xml");
 		Person person = context.getBean("person", Person.class);
 		person.speak();
+		System.out.println(person);
 		((ClassPathXmlApplicationContext) context).close();// to make sure context got destroyed. ApplicationContext
 															// doesn't have close method, so we did casting
 	}

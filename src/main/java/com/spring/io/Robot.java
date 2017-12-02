@@ -15,12 +15,12 @@ public class Robot {
 	}
 
 	@Autowired
-	public void setId(String id) {
+	public void setId(@Value("${id}")String id) {
 		this.id = id;
 	}
 
 	@Autowired
-	public void setSpeech(String speech) {
+	public void setSpeech(@Value("${speech}")String speech) {
 		this.speech = speech;
 	}
 

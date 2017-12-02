@@ -5,8 +5,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<bean id="person" class="com.spring.io.Person">
-	<!-- <property name="id" value="111"></property>
-	<property name="name" value="ashish"></property> -->
+		<property name="id" value="#{person.getNumber()}"></property>
+		<property name="name" value="#{'My name is :'+'Ashish'}"></property>
 	</bean>
 	<bean id="address" class="com.spring.io.Address">
 		<constructor-arg name="street" value="hinjewadi"></constructor-arg>

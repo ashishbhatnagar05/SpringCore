@@ -1,7 +1,8 @@
 package com.spring.io;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 
 public class Person {
 	private int id;
@@ -9,12 +10,11 @@ public class Person {
 	@Autowired
 	private Address address;
 
-	@Autowired
-	public void setId(@Value("222") int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	@Autowired
-	public void setName(@Value("Ashish") String name) {
+
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -31,4 +31,8 @@ public class Person {
 		System.out.println("Hello!, I am a person");
 	}
 
+	public int getNumber() {
+		Random random = new Random();
+		return random.nextInt(100);
+	}
 }

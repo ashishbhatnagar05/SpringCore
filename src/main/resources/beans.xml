@@ -6,5 +6,5 @@
 	<bean id="robot" class="com.spring.io.Robot" />
 	<context:annotation-config></context:annotation-config>
 
-	<context:property-placeholder location="properties/jdbc.properties" />
+	<context:property-placeholder location="jdbc.properties" />
 </beans>

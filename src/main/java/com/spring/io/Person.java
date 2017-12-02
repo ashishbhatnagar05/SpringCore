@@ -35,11 +35,16 @@ public class Person {
 		System.out.println("Hello!, I am a person");
 	}
 
-	public void onCreate() {
-		System.out.println("Person Object is created");
-	}
+//	public void onCreate() {
+//		System.out.println("Person Object is created");
+//	}
+//
+//	public void onDestroy() {
+//		System.out.println("Person Object is destroyed");
+//	}
 
-	public void onDestroy() {
-		System.out.println("Person Object is destroyed");
+	public static Person getInstance(int id, String name) {
+		System.out.println("Creating Person Object using Factory Method");
+		return new Person(id, name);
 	}
 }

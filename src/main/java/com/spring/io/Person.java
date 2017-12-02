@@ -35,4 +35,11 @@ public class Person {
 		System.out.println("Hello!, I am a person");
 	}
 
+	public void onCreate() {
+		System.out.println("Person Object is created");
+	}
+
+	public void onDestroy() {
+		System.out.println("Person Object is destroyed");
+	}
 }

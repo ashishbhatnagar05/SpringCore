@@ -53,4 +53,9 @@ public class OffersDAO {
 		});
 	}
 
+	public boolean delete(int id) {
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("id", id);
+		return jdbc.update("delete from mydb.offers where id=:id", params) == 1;
+	}
 }

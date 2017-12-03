@@ -11,6 +11,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		OffersDAO offersDAO = context.getBean("offersDAO", OffersDAO.class);
 		try {
+			offersDAO.delete(3);
 			List<Offers> offers = offersDAO.getOffers();
 			for (Offers o : offers) {
 				System.out.println(o);

@@ -1,5 +1,6 @@
 package com.spring.io;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -10,10 +11,14 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		OffersDAO offersDAO = context.getBean("offersDAO", OffersDAO.class);
-		Offer o1 = new Offer(6, "ashish", "@", "yoyoyo");
+		// Offer o1 = new Offer(8, "ashish", "@", "yoyoyo");
+		// Offer o2 = new Offer(9, "ashish", "@", "yoyoyo");
+		// List<Offer> offerslist = new ArrayList<Offer>();
+		// offerslist.add(o1);
+		// offerslist.add(o2);
 		try {
-			offersDAO.create(o1);
-			offersDAO.delete(3);
+			// offersDAO.create(offerslist);
+			// offersDAO.delete(3);
 			List<Offer> offers = offersDAO.getOffers();
 			for (Offer o : offers) {
 				System.out.println(o);

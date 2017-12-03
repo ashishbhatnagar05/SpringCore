@@ -12,6 +12,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
 
 @Component("offersDAO")
@@ -63,5 +65,10 @@ public class OffersDAO {
 	public boolean create(Offer offer) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
 		return jdbc.update("insert into mydb.offers (id,name,email,text) values (:id,:name,:email,:text)", params) == 1;
+	}
+
+	public int[] create(List<Offer> offers) {
+		SqlParameterSource[] params = SqlParameterSourceUtils.createBatch(offers.toArray());
+		return jdbc.batchUpdate("insert into mydb.offers (id,name,email,text) values (:id,:name,:email,:text)", params);
 	}
 }

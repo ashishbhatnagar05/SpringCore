@@ -15,6 +15,7 @@ public class App {
 			for (Offers o : offers) {
 				System.out.println(o);
 			}
+			System.out.println(offersDAO.getOffer("Mike"));
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

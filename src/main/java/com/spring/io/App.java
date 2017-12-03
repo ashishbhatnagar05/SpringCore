@@ -10,10 +10,12 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		OffersDAO offersDAO = context.getBean("offersDAO", OffersDAO.class);
+		Offer o1 = new Offer(6, "ashish", "@", "yoyoyo");
 		try {
+			offersDAO.create(o1);
 			offersDAO.delete(3);
-			List<Offers> offers = offersDAO.getOffers();
-			for (Offers o : offers) {
+			List<Offer> offers = offersDAO.getOffers();
+			for (Offer o : offers) {
 				System.out.println(o);
 			}
 			System.out.println(offersDAO.getOffer("Mike"));

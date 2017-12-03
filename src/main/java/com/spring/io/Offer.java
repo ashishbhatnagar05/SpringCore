@@ -1,10 +1,30 @@
 package com.spring.io;
 
-public class Offers {
+public class Offer {
 	private int id;
 	private String name;
 	private String email;
 	private String text;
+
+	public Offer(String name, String email, String text) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.text = text;
+	}
+
+	public Offer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Offer(int id, String name, String email, String text) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.text = text;
+	}
 
 	public int getId() {
 		return id;
